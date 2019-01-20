@@ -1,0 +1,74 @@
+Arguments: 
+  /home/iabramov/.nvm/versions/node/v10.12.0/bin/node /usr/share/yarn/bin/yarn.js
+
+PATH: 
+  /home/iabramov/bin:/home/iabramov/.local/bin:/home/iabramov/.nvm/versions/node/v10.12.0/bin:/home/iabramov/bin:/home/iabramov/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+
+Yarn version: 
+  1.10.1
+
+Node version: 
+  10.12.0
+
+Platform: 
+  linux x64
+
+Trace: 
+  Error: getaddrinfo EAI_AGAIN registry.yarnpkg.com registry.yarnpkg.com:443
+      at GetAddrInfoReqWrap.onlookup [as oncomplete] (dns.js:57:26)
+
+npm manifest: 
+  {
+    "name": "tic-tac-toe",
+    "version": "1.0.0",
+    "description": "tic tac toe online",
+    "repository": "git@https://github.com/them4g/tic-tac-toe",
+    "author": "them4g",
+    "license": "MIT",
+    "main": "index.js",
+    "scripts": {
+      "dev": "./node_modules/.bin/cross-env NODE_ENV=development ./node_modules/.bin/webpack-dev-server --config ./webpack --inline --hot",
+      "build": "rm -rf build/* && ./node_modules/.bin/cross-env NODE_ENV=production ./node_modules/.bin/webpack --config ./webpack --progress && cp -r static/* build/",
+      "eslint": "./node_modules/.bin/eslint ./src",
+      "stylelint": "./node_modules/.bin/stylelint \"./src/**/*.js\"",
+      "prettify": "./node_modules/.bin/prettier --write ./src/**/*.{js,json}",
+      "precommit": "lint-staged"
+    },
+    "dependencies": {
+      "@babel/core": "^7.0.0",
+      "@babel/polyfill": "^7.0.0",
+      "@babel/preset-env": "^7.0.0",
+      "babel-loader": "^8.0.0",
+      "cross-env": "^5.1.3",
+      "extract-text-webpack-plugin": "^3.0.2",
+      "lodash": "^4.17.5",
+      "webpack": "^3.11.0",
+      "webpack-svgstore-plugin": "^4.0.1"
+    },
+    "devDependencies": {
+      "babel-eslint": "^8.2.1",
+      "eslint": "^4.18.0",
+      "eslint-config-airbnb": "^16.1.0",
+      "eslint-config-prettier": "^2.9.0",
+      "eslint-plugin-import": "^2.8.0",
+      "eslint-plugin-jsx-a11y": "^6.0.3",
+      "eslint-plugin-prettier": "^2.6.0",
+      "eslint-plugin-react": "^7.6.1",
+      "husky": "^0.14.3",
+      "lint-staged": "^7.0.0",
+      "prettier": "^1.10.2",
+      "stylelint": "^9.0.0",
+      "stylelint-config-standard": "^18.1.0",
+      "stylelint-order": "^0.8.0",
+      "webpack-dev-server": "^2.11.1"
+    },
+    "engines": {
+      "node": ">=8.0.0"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
