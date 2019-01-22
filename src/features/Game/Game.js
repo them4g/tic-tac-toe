@@ -97,9 +97,6 @@ export class Game extends React.Component {
     const secondPlayerWin = this.checkWin(field, 1);
     const emptyFields = field.filter(item => item === 0);
 
-    console.log(firstPlayerWin);
-    console.log(secondPlayerWin);
-    console.log(!emptyFields.length);
     return firstPlayerWin || secondPlayerWin || !emptyFields.length;
   };
 

@@ -1,13 +1,7 @@
 import { gamesRef } from '@common/helpers/db';
 
-export const gameMove = ({ gameId, field, uid }) => {
-  console.log({
+export const gameMove = ({ gameId, field, uid }) =>
+  gamesRef(gameId).update({
     field,
     nextMoveUser: uid,
   });
-
-  return gamesRef(gameId).update({
-    field,
-    nextMoveUser: uid,
-  });
-};

@@ -1,5 +1,6 @@
 import { createSelector } from 'reselect';
 import { gamesSelector } from '@common/selectors';
+import { currentUser } from '@common/helpers/db';
 
 const dashboardSelector = state => state.dashboard;
 
@@ -15,8 +16,11 @@ export const dashboardCreateGameIsErrorSelector = createSelector(
 
 export const gamesListSelector = createSelector(gamesSelector, games =>
   Object.keys(games).reduce((acc, gameId) => {
-    if (games[gameId].isStarted) return acc;
-    acc.push({ ...games[gameId], id: gameId });
+    const game = games[gameId];
+    console.log(currentUser().uid, game.ownerId);
+    if (!game.isStarted && game.ownerId !== currentUser().uid)
+      acc.push({ ...games[gameId], id: gameId });
+
     return acc;
   }, []),
 );
